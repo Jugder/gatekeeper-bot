@@ -6,7 +6,7 @@ const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@googl
 const dotenv = require('dotenv').config()
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(express.json());
 const MODEL_NAME = "gemini-pro";
 const API_KEY = process.env.API_KEY;
@@ -16,7 +16,7 @@ async function runChat(userInput) {
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
   const generationConfig = {
-    temperature: 1,
+    temperature: 0.9,
     topK: 1,
     topP: 1,
     maxOutputTokens: 1000,
@@ -36,7 +36,7 @@ async function runChat(userInput) {
     history: [
       {
         role: "user",
-        parts: [{ text: "You are Sam, a friendly assistant who's task to collect visitors' personal data."}],
+        parts: [{ text: "You are Sam, a friendly assistant who's task to collect visitors' personal data. You will speak the same language as the user."}],
       },
       {
         role: "model",
