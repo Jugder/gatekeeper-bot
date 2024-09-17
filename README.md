@@ -15,7 +15,7 @@
 
 ### Questions or comments?
 
-Please contact me at [sHrjQ@example.com](mailto:sHrjQ@example.com) with any questions or comments.
+Please contact me at [user@example.com](mailto:user@example.com) with any questions or comments.
 
 ### License
 
